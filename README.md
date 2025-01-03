@@ -5,7 +5,7 @@
 2. [Installation Instructions](#installation-instructions)
 3. [Usage Instructions](#usage-instructions)
 4. [File Structure](#file-structure)
-5. [Key Findings] (#key-findings)
+5. [Key Findings](#key-findings)
 6. [License](#license)
 
 ---
