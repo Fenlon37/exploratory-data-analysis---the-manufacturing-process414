@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 import pandas as pd
 import yaml
-class RDSDatabaseConnector:
 
+class RDSDatabaseConnector:
   def __init__(self, credentials):
     """ Initialise the RDS instance with the credentials"""
     self.credentials = credentials
