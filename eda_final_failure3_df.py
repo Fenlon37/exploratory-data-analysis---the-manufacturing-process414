@@ -1,5 +1,6 @@
 from statsmodels.graphics.gofplots import qqplot
 from loading_dataframe import obtain_local_data
+from scipy.stats import boxcox
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -162,6 +163,18 @@ class DataTransform:
         for column in numeric_columns:
             z_scores = (self.df[column] - self.df[column].mean()) / self.df[column].std()
             self.df = self.df[z_scores.abs() < z_thresh]
+
+    def boxcox_transform(self, column):
+        """
+        Apply the Box-Cox transformation to a specified column.
+        Args:
+        column (str): The name of the column to transform.
+        """
+        if column in self.df.columns and all(self.df[column] > 0): 
+            self.df[column], _ = boxcox(self.df[column])
+            print(f"Applied Box-Cox transformation to column: {column}")
+        else:
+            print(f"Box-Cox transformation cannot be applied to {column}")
 
     def remove_highly_correlated(self, threshold=0.9):
         """
@@ -349,12 +362,22 @@ class FailureAnalysis:
         plt.xlabel('Failure Cause')
         plt.show()
 
-    def analyze_failure_correlations(self):
-        """
-        Analyze correlations between numeric features and failure causes.
+    def plot_boxplots_by_failure(self):
+        """Generate boxplots for numeric features grouped by failure conditions."""
+        self.preprocess_failure_columns()
+        numeric_features = self.get_numeric_features()
 
-        Displays correlation values and bar charts for each failure cause.
-        """
+        for feature in numeric_features:
+            plt.figure(figsize=(10, 6))
+            sns.boxplot(x=self.data['Machine failure'], y=self.data[feature])
+            plt.title(f"{feature} by Failure Condition")
+            plt.xlabel("Machine Failure (0 = Non-failure, 1 = Failure)")
+            plt.ylabel(feature)
+            plt.show()
+   
+
+    def analyze_failure_correlations(self):
+        """Analyze correlations between numeric features and failure causes."""
         self.preprocess_failure_columns()
         numeric_features = self.get_numeric_features()
         failure_causes = self.get_failure_causes()
@@ -459,8 +482,21 @@ for column in numeric_features:
     skewness = failure_df[column].skew()
     print(f"Skewness of {column}: {skewness}")
     if abs(skewness) > 1:
-        print(f"Performing log transformation on {column}")
+        print(f"Assessing log transformation of {column}")
         plotter.visualize_log_transformation(column)
+        
+# Box Cox transformation (log transformation ineffective at reducing skew)
+for column in numeric_features:
+    if failure_df[column].skew() > 1:
+        transform.boxcox_transform(column)
+
+# Skewness assessment after Box Cox transformation
+for column in numeric_features:
+    skewness = failure_df[column].skew()
+    print(f"Skewness of {column}: {skewness}")
+
+# Plot boxplots for numeric features grouped by Failure or Non-failure
+fail.plot_boxplots_by_failure()
 
 # Visualize correlation matrix before and after transformations
 plotter.visualize_correlation()
@@ -470,6 +506,10 @@ plotter.visualize_correlation()
 
 # Save after transforming skewed columns and highly correlated
 transform.save_copy("after_skew_transformations")
+
+# Visualise QQ plots
+for column in numeric_features:
+    plotter.qq_plot(column)
 
 # Visualize and handle outliers
 for column in numeric_features:
