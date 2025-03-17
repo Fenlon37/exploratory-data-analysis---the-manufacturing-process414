@@ -55,6 +55,14 @@ RDS_PORT:
 
 ## File structure
 TO BE FINALISED
+Will be:
+- Data Extraction file
+- Data preprocessing class
+- Data transformation class
+- Data visualisation class
+- Data failure insights class
+
+Rename above to match class names and have files be named so that they are consistent with the classes.
 
 ## Key Findings
 - 3.5% of manufacturing processes experienced failures.
