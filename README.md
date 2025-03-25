@@ -52,6 +52,8 @@ RDS_PORT:
 #### Failure Analysis
 1. Compute operating ranges for key metrics like air temperature, torque, and tool wear.
 2. Investigate failure causes and identify high-risk operating conditions.
+#### Overview
+- Please see the EDA notebook file for an overview of the project and the reasoning behind the coding decisions.
 
 ## File structure
 TO BE FINALISED
