@@ -45,7 +45,7 @@ RDS_PORT:
 3. Run the loading_dataframe.py script using the following code *python loading_dataframe.py*
 4. Use the DataTransform class to clean and preprocess the dataset.
 #### Exploratory Data Analysis (EDA)
-1. Run the eda_final_failure3_df.py script Using the following code using the following code *python eda_final_failure3_df.py*
+1. Run the eda_final_failure3_df.py script using the following code *python eda_final_failure3_df.py*
 2. Use the DataFrameInfo class to generate summary statistics.
 3. Visualize data and gain insights using methods in the Plotter class.
 4. Handle missing values, skewed distributions, and outliers with DataTransform.
