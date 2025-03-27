@@ -66,7 +66,7 @@ Will be:
 - FailureAnalysis_df
 - eda_final_failure3_df
 
-files have been named so that they are consistent with their class or role within the analysis.
+Files have been named so that they are consistent with their class or role within the analysis.
 
 ## Key Findings
 - 3.5% of manufacturing processes experienced failures.
