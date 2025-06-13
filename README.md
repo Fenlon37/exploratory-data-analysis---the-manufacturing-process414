@@ -58,13 +58,13 @@ RDS_PORT:
 ## File structure
 TO BE FINALISED
 Will be:
-- db_utils
-- loading_dataframe
-- DataFrameInfo_df
-- DataTransform_df
-- Plotter_df
-- FailureAnalysis_df
-- eda_final_failure3_df
+- db_utils.py
+- loading_dataframe.py
+- DataFrameInfo_df.py
+- DataTransform_df.py
+- Plotter_df.py
+- FailureAnalysis_df.py
+- eda_final_failure3_df.py
 
 Files have been named so that they are consistent with their class or role within the analysis.
 
