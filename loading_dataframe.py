@@ -1,5 +1,4 @@
 import pandas as pd
-
 def obtain_local_data(file_path):
  try:
    failure_df = pd.read_csv(file_path)
