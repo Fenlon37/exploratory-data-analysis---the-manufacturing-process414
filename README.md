@@ -64,7 +64,7 @@ Will be:
 - DataTransform_df.py
 - Plotter_df.py
 - FailureAnalysis_df.py
-- eda_final_failure3_df.py
+- final_df.py
 
 Files have been named so that they are consistent with their class or role within the analysis.
 
