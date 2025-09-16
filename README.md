@@ -56,17 +56,23 @@ RDS_PORT:
 - Please see the EDA notebook file for an overview of the project and the reasoning behind the coding decisions.
 
 ## File structure
-TO BE FINALISED
-Will be:
-- db_utils.py
-- loading_dataframe.py
-- DataFrameInfo_df.py
-- DataTransform_df.py
-- Plotter_df.py
-- FailureAnalysis_df.py
-- final_df.py
 
-Files have been named so that they are consistent with their class or role within the analysis.
+└── db_utils.py                    # Database creation.
+    
+    ├── loading_dataframe.py       # DataFrame loaded
+   
+    ├── DataFrameInfo_df.py        # DataFrame basic information
+    
+    ├── DataTransform_df.py        # DataFrame transformations
+    
+    ├── Plotter_df.py              # Visualisations and statistical analysis
+    
+    ├── FailureAnalysis_df.py      # Analysis of tool failures    
+    
+    ├── final_df.py                # Activation of commands
+    
+    └── README.md                  # README file
+
 
 ## Key Findings
 - 3.5% of manufacturing processes experienced failures.
