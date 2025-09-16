@@ -45,19 +45,19 @@ RDS_PORT:
 3. Run the loading_dataframe.py script using the following code *python loading_dataframe.py*
 4. Use the DataTransform class to clean and preprocess the dataset.
 #### Exploratory Data Analysis (EDA)
-1. Run the eda_final_failure3_df.py script using the following code *python eda_final_failure3_df.py*
+1. Run the final_df.py script using the following code *python final_df.py*
 2. Use the DataFrameInfo class to generate summary statistics.
 3. Visualize data and gain insights using methods in the Plotter class.
-4. Handle missing values, skewed distributions, and outliers with DataTransform.
+4. Handle missing values, skewed distributions, and outliers with the DataTransform class.
 #### Failure Analysis
 1. Compute operating ranges for key metrics like air temperature, torque, and tool wear.
 2. Investigate failure causes and identify high-risk operating conditions.
 #### Overview
-- Please see the EDA notebook file for an overview of the project and the reasoning behind the coding decisions.
+- Please see the EDA notebook file for an overview of the project and the reasoning behind the coding decisions. - TBA
 
 ## File structure
     
-    ├── db_utils.py                # Database creation
+    ├── db_utils.py                # Database data extraction
 
     ├── loading_dataframe.py       # DataFrame loaded
    
