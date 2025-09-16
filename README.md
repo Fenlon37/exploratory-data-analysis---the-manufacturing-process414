@@ -56,9 +56,9 @@ RDS_PORT:
 - Please see the EDA notebook file for an overview of the project and the reasoning behind the coding decisions.
 
 ## File structure
-
-└── db_utils.py                    # Database creation.
     
+    ├── db_utils.py                # Database creation
+
     ├── loading_dataframe.py       # DataFrame loaded
    
     ├── DataFrameInfo_df.py        # DataFrame basic information
