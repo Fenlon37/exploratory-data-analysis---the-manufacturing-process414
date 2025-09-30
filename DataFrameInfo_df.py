@@ -6,7 +6,7 @@ file_path = "failure_data.csv"
 failure_df = obtain_local_data(file_path)
 
 class DataFrameInfo:
-    """A class for inspecting properties and characteristics of a pandas DataFrame."""   
+    """A class for inspecting the properties of a pandas DataFrame."""   
     def __init__(self, df):
         """
         Initializes the DataFrameInfo class.
@@ -80,4 +80,3 @@ class DataFrameInfo:
         print("\nMedian, Mean, and Standard Deviation")
         print(self.extract_statistics())
 
-"""Once data frame has been called from the class can just call the final function now as it incorporates all of the previous (DELETE THIS NOTE WHEN DONE!!)"""
