@@ -34,7 +34,7 @@ else:
 print("Before replacing blanks:")
 print(transform.df.head())
 transform.replace_blank_with_nan()
-print("Before replacing blanks:")
+print("After replacing blanks:")
 print(transform.df.head())
 
 # Fill missing values with median
