@@ -1,4 +1,4 @@
-# Project Title: Manufacturing Process Analysis and Failure Prediction
+# Manufacturing Process Analysis and Failure Prediction
 
 ## Table of Contents
 1. [Objective](#objective)
